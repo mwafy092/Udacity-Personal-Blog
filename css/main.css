@@ -1,0 +1,249 @@
+@import "./reset.css";
+@import "./fonts.css";
+@import "./img.css";
+
+/* mobile first approach design */
+
+.container {
+    display: grid;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer"
+    ;
+}
+
+/* header */
+
+header {
+    background-image: url(../images/hero-img.jpg);
+    background-size: cover;
+    background-position: center;
+    grid-area: header;
+    padding: 2rem 0 5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header-body {
+    color: #fff;
+    text-align: center;
+    text-align: center;
+    margin: 8rem 0 4rem;
+}
+
+.header-body h1 { 
+    margin-bottom: 0.5rem;
+}
+
+.header-body p {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+span {
+    color: #4A681E;
+    font-weight: bold;
+}
+
+/* navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 0.5rem;
+}
+
+li.about {
+    background-color: #4A681E;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+li.contact {
+    border: 1px solid #4A681E;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+
+/* main */
+main {
+    display: grid;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: 
+    "main-body"
+    "main-images"
+    ;
+}
+
+.main-img {
+    grid-area: main-images;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.main-body {
+    grid-area: main-body;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+
+.main-body h2 {
+    font-size: 1.3rem;
+    text-align: left;
+    color: #DC403E;
+    margin: 2rem 0 0.5rem;
+}
+
+.main-body h3 {
+    color: rgba(0, 0, 0, 0.5);
+    margin: 2rem 0 0 0;
+}
+.main-body p {
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.5rem;
+}
+
+blockquote {
+    margin: 0 0 2rem 0;
+}
+
+.main-btn {
+    margin-top: 2rem;
+    display: block;
+    text-decoration: none;
+    color: #DC403E;
+    border: 1px solid #DC403E;
+    padding: 0.5rem 1rem;
+    border-radius: 0 1rem;
+    font-weight: bold;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.main-btn:hover {
+    box-shadow: none;
+}
+/* footer */
+footer {
+    margin: 1rem 0 0 0;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #4A681E;
+}
+
+figcaption {
+    font-size: .9rem;
+    margin: 0.5rem 0 0 0.2rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* animation */
+
+.animate1 {
+    animation: mover 2s ease-in-out;
+}
+
+.animate2 {
+    animation: fade 2s ease-in-out;
+}
+
+.animate3 {
+    animation: fader 2s ease-in-out;
+}
+
+@keyframes mover {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+        transform: translateX(-4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fader {
+    0% {
+        opacity: 0;
+        transform: translateX(4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* media query  desktop version */
+@media(min-width: 750px) {
+    .header-body {
+        text-align: left;
+        padding: 1rem;
+        font-size: 1.5rem;
+        margin-top: 4rem;
+    }
+    .header {
+        background-size: cover;
+        background-position: top;
+        padding: 2rem 2rem 15rem;
+    }
+    .main-body {
+        padding: 2rem 0;
+    }
+    .main-img {
+        display: flex;
+}
+    img {
+        width: 25%;
+    }
+}
+
